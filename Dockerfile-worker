@@ -1,0 +1,7 @@
+FROM python:3.6-alpine
+
+COPY service app
+RUN pip install -r app/requirements_worker.txt
+
+ENTRYPOINT ["python"]
+CMD ["app/worker.py"]
